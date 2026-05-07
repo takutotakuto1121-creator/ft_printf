@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsugimot <tsugimot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsugimot <tsugimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:23:54 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/02 02:38:24 by tsugimot         ###   ########.fr       */
+/*   Updated: 2026/05/07 10:56:51 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -33,5 +33,6 @@ void	print_per(int *tl);
 void	putnbr_unsigned(unsigned int n, int *tl);
 void	putnbr_unsigned_long(unsigned long long n, int *tl);
 int		ft_printf(const char *format, ...);
+void	putnbr_unsigned_long_big(unsigned long long n, int *tl);
 
 #endif

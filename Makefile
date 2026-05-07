@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 INCS = includes
-SRCS = srcs/ft_printf.c srcs/tools1.c srcs/tools2.c srcs/tools3.c
+SRCS = srcs/ft_printf.c srcs/tools1.c srcs/tools2.c srcs/tools3.c srcs/tools4.c
 INCS = includes/
 OBJS = $(SRCS:.c=.o)
 CC = cc

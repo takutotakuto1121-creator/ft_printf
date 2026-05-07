@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   tools4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsugimot <tsugimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 02:23:58 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/07 11:12:01 by tsugimot         ###   ########.fr       */
+/*   Created: 2026/05/07 11:11:05 by tsugimot          #+#    #+#             */
+/*   Updated: 2026/05/07 11:13:12 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	putnbr_unsigned_long_big(unsigned long long n, int *tl)
 {
-	va_list	ap;
-	int		tl;
-
-	va_start (ap, format);
-	tl = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			print_conversion (&ap, &tl, (char *)(format + 1));
-			format += 2;
-		}
-		else
-		{
-			ft_putchar (*format, &tl);
-			format++;
-		}
-	}
-	va_end (ap);
-	return (tl);
+	if (n >= 16)
+		putnbr_unsigned_long_big (n / 16, tl);
+	write (1, &"0123456789ABCDEF"[n % 16], 1);
+	(*tl)++;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsugimot <tsugimot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsugimot <tsugimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:24:05 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/02 02:36:21 by tsugimot         ###   ########.fr       */
+/*   Updated: 2026/05/07 10:00:54 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	print_p(va_list *ap, int *tl)
 
 	p = va_arg (*ap, void *);
 	a = (unsigned long long)p;
-	write (1, "0x", 2);
+	ft_putstr ("0x", tl);
 	putnbr_unsigned_long (a, tl);
 }
 

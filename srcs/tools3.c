@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsugimot <tsugimot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsugimot <tsugimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:24:08 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/02 02:36:16 by tsugimot         ###   ########.fr       */
+/*   Updated: 2026/05/07 10:55:00 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 void	print_x(va_list *ap, int *tl)
 {
-	int		n;
-	char	*base;
+	unsigned int		n;
 
-	n = va_arg (*ap, int);
-	base = "0123456789abcdef";
-	putnbr_base (n, base, tl);
+	n = va_arg (*ap, unsigned int);
+	putnbr_unsigned_long (n, tl);
 }
 
 void	print_lx(va_list *ap, int *tl)
 {
-	int		n;
-	char	*base;
+	unsigned int		n;
 
-	n = va_arg (*ap, int);
-	base = "0123456789ABCDEF";
-	putnbr_base (n, base, tl);
+	n = va_arg (*ap, unsigned int);
+	putnbr_unsigned_long_big (n, tl);
 }
 
 void	print_per(int *tl)

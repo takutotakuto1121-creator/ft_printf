@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsugimot <tsugimot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsugimot <tsugimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:24:01 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/02 02:36:26 by tsugimot         ###   ########.fr       */
+/*   Updated: 2026/05/07 11:01:09 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ void	ft_putstr(char *str, int *tl)
 {
 	int	i;
 
+	if (!str)
+	{
+		write (1, "(null)", 6);
+		*tl += 6;
+		return ;
+	}
 	i = 0;
 	while (str[i])
 		i++;
@@ -53,9 +59,10 @@ void	putnbr_base(int n, char *base, int *tl)
 	{
 		write (1, "-", 1);
 		nb *= -1;
+		(*tl)++;
 	}
 	if (nb >= digit)
-		putnbr_base (n / digit, base, tl);
+		putnbr_base (nb / digit, base, tl);
 	write (1, &base[nb % digit], 1);
 	(*tl)++;
 }
