@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <tsugimot>.*
+*This project has been created as part of the 42 curriculum by tsugimot.*
 
 ## 概要(Description)
 この課題は42cursusの課題です。printf関数を自作する課題です。可変長引数を理解して使用できるようになるなどの事や自作ライブラリにprintf関数を実装する事を目的としています。
@@ -17,7 +17,7 @@
 `make` で `libftprintf.a`を作成し、それをmain関数を含む任意のファイルとともにコンパイルします。
 
 ## 機能(function)
-対応している変換指定しは以下の通りです。
+対応している変換指定子は以下の通りです。
 
 * **%c**: １つの文字を出力します。
 * **%s**: 文字列を出力します。

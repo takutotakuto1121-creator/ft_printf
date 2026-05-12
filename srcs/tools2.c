@@ -6,7 +6,7 @@
 /*   By: tsugimot <tsugimot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:24:05 by tsugimot          #+#    #+#             */
-/*   Updated: 2026/05/08 16:53:27 by tsugimot         ###   ########.fr       */
+/*   Updated: 2026/05/12 12:17:17 by tsugimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ void	print_p(va_list *ap, int *tl)
 	unsigned long long	a;
 
 	p = va_arg (*ap, void *);
+	if (p == NULL)
+	{
+		write(1, "(nil)", 5);
+		*tl += 5;
+		return ;
+	}
 	a = (unsigned long long)p;
 	ft_putstr ("0x", tl);
 	putnbr_unsigned_long (a, tl);
